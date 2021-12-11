@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>Diacritic criticize</name>
+    <id>com.paulidealiste.diacritic_criticize</id>
+    <param name="tab" type="notebook">
+        <page name="Options" gui-text="Options">
+            <param name="decorations" type="optiongroup" appearance="combo" gui-text="Decorations">
+                <option context="split" value="diacritics">Diacritics</option>
+                <option context="split" value="ravings">Ravings</option>
+                <option context="split" value="chao">Raving diacritics</option>
+            </param>
+            <param name="quantity" type="int" min="2" max="100" gui-text="Decorations per letter">5</param>
+        </page>
+        <page name="About" gui-text="About">
+            <label>Explore the UTF-8 chaotic beauty! Transform your headlines right now!</label>
+        </page>
+    </param>
+    <effect>
+        <object-type>text</object-type>
+        <effects-menu>
+            <submenu name="Text" />
+        </effects-menu>
+    </effect>
+    <script>
+        <!--suppress CheckValidXmlInScriptTagBody -->
+        <command location="inx" interpreter="python">diacritic_criticize.py</command>
+    </script>
+</inkscape-extension>
