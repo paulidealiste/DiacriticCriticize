@@ -6,11 +6,23 @@ import inkex
 
 class DiacriticCriticize(inkex.EffectExtension):
     """Critical assessment of the supplied boring text"""
+    UTF8_Ranges = {
+        "LatinExtendedA": (0x0100, 0x017F),
+        "LatinExtendedB": (0x0180, 0x024F),
+        "IPAExtensions": (0x0250, 0x02AF),
+        "GreekAndCoptic": (0x0370, 0x03FF),
+        "Cyrillic": (0x0400, 0x04FF),
+        "CyrillicSupplement": (0x0500, 0x052F),
+        "MathematicalOperations": (0x2200, 0x22FF),
+        "LegacyComputing": (0x1FB00, 0x1FBFF),
+        "Cuneiform": (0x12000, 0x123FF)
+    }
 
     def add_arguments(self, pars):  # type: (ArgumentParser) -> None
         pars.add_argument('--tab', help='Selected tab when ok is pressed')
         pars.add_argument('-d', '--decorations', default="chao")
         pars.add_argument('-q', '--quantity', default=5)
+        pars.add_argument('-u8r', '--utf8range', default="IPAExtensions")
 
     def diacritic_glue(self, character, count):
         ldr = 0x0300
@@ -42,11 +54,12 @@ class DiacriticCriticize(inkex.EffectExtension):
         return ''.join(criticized)
 
     def ravings(self, elem):
-        include_ranges = [
-            (0x0250, 0x02AF)
-        ]
+        include_ranges = self.fill_utf8ranges()
         alphabet = [chr(cp) for current_range in include_ranges for cp in range(current_range[0], current_range[1] + 1)]
         return ''.join(random.choice(alphabet) for i in range(len(elem.text)))
+
+    def fill_utf8ranges(self):
+        return [self.UTF8_Ranges.get(self.options.utf8range)]
 
     def create_text(self, decorated, node):
         text = inkex.TextElement(**node.attrib)

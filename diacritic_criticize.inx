@@ -10,6 +10,17 @@
                 <option context="split" value="chao">Raving diacritics</option>
             </param>
             <param name="quantity" type="int" min="2" max="100" gui-text="Decorations per letter">5</param>
+            <param name="utf8range" type="optiongroup" appearance="combo" gui-text="Ravings UTF-8 range">
+                <option value="LatinExtendedA">Latin Extended-A</option>
+                <option value="LatinExtendedB">Latin Extended-B</option>
+                <option value="IPAExtensions">IPA Extensions</option>
+                <option value="GreekAndCoptic">Greek and Coptic</option>
+                <option value="Cyrillic">Cyrillic</option>
+                <option value="CyrillicSupplement">Cyrillic Supplement</option>
+                <option value="MathematicalOperations">Mathematical Operations</option>
+                <option value="LegacyComputing">Symbols for Legacy Computing</option>
+                <option value="Cuneiform">Cuneiform</option>
+            </param>
         </page>
         <page name="About" gui-text="About">
             <label>Explore the UTF-8 chaotic beauty! Transform your headlines right now!</label>

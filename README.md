@@ -29,8 +29,8 @@ each of the selected word's letters. Thus the effect adds random marks on each l
 
 ### Explorative randomness
 This effect (*Ravings* in the *Decorations* dropdown) acts as a letter-by-letter substitution engine, but using arbitrary 
-UTF-8 ranges. For now, only the [IPA Extensions](https://en.wikipedia.org/wiki/IPA_Extensions) range is enabled (0x0250 - 0x02AF)
-giving the random phonetic alphabet sign letter-for-letter.
+UTF-8 ranges. *Ravings UTF-8 range* dropdown offers the choice of UTF-8 subset for this substitution. Shown here are the random signs from
+the IPA Extensions range (0x0250, 0x02AF).
 
 ![RavingDecorations](./resources/ravings.png)
 
@@ -40,5 +40,7 @@ The last options is to combine both effects (*Diacritic ravings*).
 
 ### Todos
 
-- [ ] Include more UTF-8 ranges for *Ravings*
-- [ ] Enable the choice of ranges (like [here](https://www.utf8-chartable.de/unicode-utf8-table.pl))
+- [x] Include more UTF-8 ranges for *Ravings*
+- [x] Enable the choice of ranges (like [here](https://www.utf8-chartable.de/unicode-utf8-table.pl))
+- [ ] Extend the ranges list
+- [ ] Offer UI controls for combinations of UTF-8 ranges 
