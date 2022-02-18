@@ -8,7 +8,7 @@ Primarily, it is  used for breaking the mold of the usual text-based decorations
 
 As with any Inkscape extension, the easiest way it to copy both *diacritic_criticize.inx* and *diacritic_criticize.py* in the
 extensions folder, where Inkscape could find them. On Linux it is usually in *usr/share/inkscape/extensions/* while on 
-Windows it is in the Inkscape install folder, under *share/incsape/extensions*.
+Windows it is in the Inkscape install folder, under *share/inkscape/extensions*.
 
 The extension will appear in the Extensions menu under Text. When chosen, the extension options widnow will pop up.
 
